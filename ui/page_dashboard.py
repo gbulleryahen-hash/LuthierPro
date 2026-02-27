@@ -52,7 +52,7 @@ class DashboardPage(BasePage):
         layout.addLayout(self.stats_grid)
 
         lbl_recent = QLabel(t("dash.recent"))
-        lbl_recent.setStyleSheet("color:#6a6050;font-size:8pt;font-weight:bold;letter-spacing:2px;margin-top:4px;")
+        lbl_recent.setStyleSheet("color:#908870;font-size:8pt;font-weight:bold;letter-spacing:2px;margin-top:4px;")
         layout.addWidget(lbl_recent)
 
         self.recent_table = self.make_table([

@@ -68,7 +68,7 @@ class EmailDialog(QDialog):
         attach_frame = QFrame(); attach_frame.setObjectName("card")
         af = QHBoxLayout(attach_frame); af.setContentsMargins(12, 8, 12, 8)
         self.attach_lbl = QLabel("Aucun PDF généré")
-        self.attach_lbl.setStyleSheet("color:#6a6050;font-size:9pt;")
+        self.attach_lbl.setStyleSheet("color:#908870;font-size:9pt;")
         af.addWidget(self.attach_lbl)
         af.addStretch()
         btn_gen_pdf = QPushButton("📄  Générer le PDF")

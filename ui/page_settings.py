@@ -75,7 +75,7 @@ class SettingsPage(BasePage):
         self.logo_preview = QLabel("Aucun logo")
         self.logo_preview.setFixedSize(160, 72)
         self.logo_preview.setAlignment(Qt.AlignCenter)
-        self.logo_preview.setStyleSheet("background:#252215;border:1px dashed #3a3525;border-radius:6px;color:#6a6050;font-size:9pt;")
+        self.logo_preview.setStyleSheet("background:#252215;border:1px dashed #3a3525;border-radius:6px;color:#908870;font-size:9pt;")
         g_logo.addWidget(self.logo_preview)
         btn_col = QVBoxLayout()
         btn_logo = QPushButton("📁  Choisir une image...")
@@ -83,7 +83,7 @@ class SettingsPage(BasePage):
         btn_rm_logo = QPushButton("🗑  Supprimer le logo")
         btn_rm_logo.setFixedHeight(32); btn_rm_logo.clicked.connect(self._remove_logo)
         note = QLabel("PNG/JPG recommandé\nMax 2 Mo")
-        note.setStyleSheet("color:#6a6050;font-size:8pt;")
+        note.setStyleSheet("color:#908870;font-size:8pt;")
         btn_col.addWidget(btn_logo); btn_col.addWidget(btn_rm_logo); btn_col.addWidget(note)
         g_logo.addLayout(btn_col); g_logo.addStretch()
         layout.addWidget(grp_logo)
@@ -111,7 +111,7 @@ class SettingsPage(BasePage):
         self.tva_defaut_cb.setCurrentIndex(3)  # 20% par défaut
         self.tva_defaut_cb.setFixedWidth(120)
         info_tva = QLabel("Appliquée automatiquement sur les nouveaux devis/factures")
-        info_tva.setStyleSheet("color:#6a6050;font-size:8pt;")
+        info_tva.setStyleSheet("color:#908870;font-size:8pt;")
         tva_row = QHBoxLayout()
         tva_row.addWidget(self.tva_defaut_cb)
         tva_row.addWidget(info_tva)
@@ -167,7 +167,7 @@ class SettingsPage(BasePage):
             "La base de données contient TOUTES vos données (clients, guitares, devis, factures).\n"
             "Déplacez-la vers Dropbox, OneDrive, un NAS… pour la synchroniser automatiquement."
         )
-        info_db.setStyleSheet("color:#8a8070;font-size:9pt;")
+        info_db.setStyleSheet("color:#b0a888;font-size:9pt;")
         info_db.setWordWrap(True)
         g_db.addWidget(info_db)
 
@@ -200,7 +200,7 @@ class SettingsPage(BasePage):
         g7l = QVBoxLayout(grp7); g7l.setSpacing(10)
 
         info7 = QLabel("Exportez toutes vos données (clients, articles, guitares, devis, factures) dans un fichier JSON.\nUtilisez ce fichier pour sauvegarder ou transférer LuthierPro sur un autre ordinateur.")
-        info7.setStyleSheet("color:#8a8070;font-size:9pt;")
+        info7.setStyleSheet("color:#b0a888;font-size:9pt;")
         info7.setWordWrap(True)
         g7l.addWidget(info7)
 

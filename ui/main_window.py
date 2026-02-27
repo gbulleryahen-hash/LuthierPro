@@ -84,6 +84,7 @@ class MainWindow(QMainWindow):
 
         sub = QLabel("ATELIER")
         sub.setObjectName("sidebar-sub")
+        sub.setStyleSheet("color:#a09060;font-size:8pt;letter-spacing:2px;")
         sub.setAlignment(Qt.AlignCenter)
         hl.addWidget(sub, alignment=Qt.AlignHCenter)
 
@@ -132,7 +133,7 @@ class MainWindow(QMainWindow):
 
         # ── Pied de sidebar ──────────────────────────────────
         self.sb_company_lbl = QLabel(self.db.get_setting("name", "Mon atelier"))
-        self.sb_company_lbl.setStyleSheet("color:#4a4535;font-size:9pt;padding:8px 16px 2px 20px;")
+        self.sb_company_lbl.setStyleSheet("color:#706858;font-size:9pt;padding:8px 16px 2px 20px;")
         self.sb_company_lbl.setWordWrap(True)
         sb.addWidget(self.sb_company_lbl)
 
@@ -156,13 +157,14 @@ class MainWindow(QMainWindow):
     def _nav_style(self, active):
         if active:
             return (
-                "QPushButton { background-color:#201d10; color:#d4a853; border:none;"
-                "border-left:3px solid #d4a853; text-align:left; padding:9px 16px 9px 20px; font-weight:bold; }"
+                "QPushButton { background-color:#2e2a0c; color:#f2c840; border:none;"
+                "border-left:4px solid #f2c840; text-align:left; padding:9px 16px 9px 19px; font-weight:bold; }"
             )
         return (
-            "QPushButton { background:transparent; color:#7a7060; border:none;"
-            "border-left:3px solid transparent; text-align:left; padding:9px 16px 9px 20px; }"
-            "QPushButton:hover { background-color:#1c1a12; color:#c8c0b0; }"
+            "QPushButton { background:transparent; color:#c8bc96; border:none;"
+            "border-left:4px solid transparent; text-align:left; padding:9px 16px 9px 19px; }"
+            "QPushButton:hover { background-color:#28240c; color:#f0e8d0;"
+            "border-left:4px solid #c8a840; }"
         )
 
     def _build_pages(self):

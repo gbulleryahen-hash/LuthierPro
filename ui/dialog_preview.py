@@ -84,7 +84,7 @@ class PreviewDialog(QDialog):
         for label, value in rows:
             row = QHBoxLayout()
             l1 = QLabel(label); l1.setFixedWidth(120)
-            l1.setStyleSheet("color:#6a6050;font-size:9pt;font-weight:bold;")
+            l1.setStyleSheet("color:#908870;font-size:9pt;font-weight:bold;")
             l2 = QLabel(value); l2.setStyleSheet("color:#e8e0d0;font-size:10pt;")
             l2.setWordWrap(True)
             row.addWidget(l1); row.addWidget(l2); row.addStretch()
@@ -95,7 +95,7 @@ class PreviewDialog(QDialog):
         # Lignes
         if lignes:
             lbl2 = QLabel("LIGNES")
-            lbl2.setStyleSheet("color:#6a6050;font-size:8pt;font-weight:bold;letter-spacing:2px;margin-top:8px")
+            lbl2.setStyleSheet("color:#908870;font-size:8pt;font-weight:bold;letter-spacing:2px;margin-top:8px")
             cl.addWidget(lbl2)
             for l in lignes:
                 total = float(l["quantite"] or 1) * float(l["prix_ht"] or 0)
@@ -110,7 +110,7 @@ class PreviewDialog(QDialog):
         has_bilan = any(bilan.get(k,{}).get("avant","") or bilan.get(k,{}).get("apres","") for k in bilan if k != "_observations")
         if has_bilan:
             lbl3 = QLabel("BILAN TECHNIQUE")
-            lbl3.setStyleSheet("color:#6a6050;font-size:8pt;font-weight:bold;letter-spacing:2px;margin-top:8px")
+            lbl3.setStyleSheet("color:#908870;font-size:8pt;font-weight:bold;letter-spacing:2px;margin-top:8px")
             cl.addWidget(lbl3)
             from core.styles import BILAN_FIELDS
             for key, label in BILAN_FIELDS:

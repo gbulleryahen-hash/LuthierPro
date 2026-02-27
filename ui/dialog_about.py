@@ -73,7 +73,7 @@ class AboutDialog(QDialog):
         # Tagline
         tagline = QLabel(t("about.tagline"))
         tagline.setAlignment(Qt.AlignCenter)
-        tagline.setStyleSheet("color: #8a8070; font-size: 10pt;")
+        tagline.setStyleSheet("color: #b0a888; font-size: 10pt;")
         tagline.setWordWrap(True)
         b2.addWidget(tagline)
 
@@ -83,7 +83,7 @@ class AboutDialog(QDialog):
         def info_row(label, value, mono=False, color="#e8e0d0"):
             row = QHBoxLayout()
             lbl = QLabel(label)
-            lbl.setStyleSheet("color: #6a6050; font-size: 9pt;")
+            lbl.setStyleSheet("color: #908870; font-size: 9pt;")
             lbl.setFixedWidth(130)
             val = QLabel(value)
             if mono:
@@ -111,11 +111,11 @@ class AboutDialog(QDialog):
 
         for tech, color in [
             ("Python",       "#f5c542"),
-            ("  ·  ", "#4a4535"),
+            ("  ·  ", "#706858"),
             ("PySide6",      "#41cd52"),
-            ("  ·  ", "#4a4535"),
+            ("  ·  ", "#706858"),
             ("ReportLab",    "#6090d4"),
-            ("  ·  ", "#4a4535"),
+            ("  ·  ", "#706858"),
             ("SQLite",       "#d4a853"),
         ]:
             lbl = QLabel(tech)
@@ -130,7 +130,7 @@ class AboutDialog(QDialog):
         # Copyright
         copy_lbl = QLabel(t("about.copyright"))
         copy_lbl.setAlignment(Qt.AlignCenter)
-        copy_lbl.setStyleSheet("color: #4a4535; font-size: 8pt;")
+        copy_lbl.setStyleSheet("color: #706858; font-size: 8pt;")
         copy_lbl.setWordWrap(True)
         b2.addWidget(copy_lbl)
 

@@ -38,7 +38,7 @@ class GuitaresPage(BasePage):
         toolbar.addStretch()
 
         self.count_lbl = QLabel("0 guitares")
-        self.count_lbl.setStyleSheet("color:#6a6050;font-size:9pt")
+        self.count_lbl.setStyleSheet("color:#908870;font-size:9pt")
         toolbar.addWidget(self.count_lbl)
         layout.addLayout(toolbar)
 
@@ -231,7 +231,7 @@ class GuitareFicheDialog(QDialog):
         title.setStyleSheet("color:#d4a853;font-size:14pt;font-weight:bold;")
         sub_parts = [g["type"] or "", g["annee"] or "", f'N°{g["serie"]}' if g["serie"] else ""]
         sub = QLabel(" · ".join(filter(None, sub_parts)))
-        sub.setStyleSheet("color:#6a6050;font-size:9pt;margin-top:2px")
+        sub.setStyleSheet("color:#908870;font-size:9pt;margin-top:2px")
 
         info_col = QVBoxLayout()
         info_col.addWidget(title); info_col.addWidget(sub)
@@ -293,7 +293,7 @@ class GuitareFicheDialog(QDialog):
         if not interventions:
             empty = QLabel("Aucune intervention enregistrée.\nAssociez cette guitare à un devis ou une facture.")
             empty.setAlignment(Qt.AlignCenter)
-            empty.setStyleSheet("color:#6a6050;font-size:10pt;padding:40px")
+            empty.setStyleSheet("color:#908870;font-size:10pt;padding:40px")
             th_layout.addWidget(empty)
         else:
             for d in interventions:
@@ -314,7 +314,7 @@ class GuitareFicheDialog(QDialog):
         if not bilans_docs:
             empty2 = QLabel("Aucun bilan technique enregistré.")
             empty2.setAlignment(Qt.AlignCenter)
-            empty2.setStyleSheet("color:#6a6050;font-size:10pt;padding:40px")
+            empty2.setStyleSheet("color:#908870;font-size:10pt;padding:40px")
             tb_layout.addWidget(empty2)
         else:
             for d in bilans_docs:
@@ -347,7 +347,7 @@ class GuitareFicheDialog(QDialog):
 
     def _mini_label(self, text):
         l = QLabel(text)
-        l.setStyleSheet("color:#6a6050;font-size:8pt;font-weight:bold;letter-spacing:1px;")
+        l.setStyleSheet("color:#908870;font-size:8pt;font-weight:bold;letter-spacing:1px;")
         return l
 
     def _add_intervention_card(self, layout, d):
@@ -360,12 +360,12 @@ class GuitareFicheDialog(QDialog):
         numero_lbl = QLabel(f'{icon}  <b style="color:#d4a853">{d["numero"]}</b>')
         numero_lbl.setTextFormat(Qt.RichText)
 
-        statut_color = {"payé":"#6bbf8e","accepté":"#6bbf8e","envoyé":"#6090d4","refusé":"#d46060","en retard":"#d46060"}.get(d["statut"],"#8a8070")
+        statut_color = {"payé":"#6bbf8e","accepté":"#6bbf8e","envoyé":"#6090d4","refusé":"#d46060","en retard":"#d46060"}.get(d["statut"],"#b0a888")
         statut_lbl = QLabel(d["statut"].capitalize())
         statut_lbl.setStyleSheet(f"color:{statut_color};font-size:8pt;padding:2px 8px;border:1px solid {statut_color};border-radius:8px;")
 
         date_lbl = QLabel(d["date_doc"] or "")
-        date_lbl.setStyleSheet("color:#6a6050;font-size:9pt;")
+        date_lbl.setStyleSheet("color:#908870;font-size:9pt;")
 
         amount_color = "#6bbf8e" if is_facture else "#e8e0d0"
         amount_val = d["total_ttc"] if is_facture else d["total_ht"]
@@ -386,7 +386,7 @@ class GuitareFicheDialog(QDialog):
             items_text = " · ".join([l["designation"] for l in lignes[:3] if l["designation"]])
             if len(lignes) > 3: items_text += " …"
             items_lbl = QLabel(items_text)
-            items_lbl.setStyleSheet("color:#6a6050;font-size:9pt;")
+            items_lbl.setStyleSheet("color:#908870;font-size:9pt;")
             c_layout.addWidget(items_lbl)
 
         row2 = QHBoxLayout()
@@ -446,7 +446,7 @@ class GuitareFicheDialog(QDialog):
         obs = bilan.get("_observations","")
         if obs:
             obs_lbl = QLabel(f"Observations : {obs}")
-            obs_lbl.setStyleSheet("color:#a09070;font-size:9pt;padding:6px;background:#252215;border-radius:4px;border-left:3px solid #d4a853;")
+            obs_lbl.setStyleSheet("color:#c0b090;font-size:9pt;padding:6px;background:#252215;border-radius:4px;border-left:3px solid #d4a853;")
             obs_lbl.setWordWrap(True)
             c_layout.addWidget(obs_lbl)
 

@@ -181,7 +181,7 @@ class DocumentDialog(QDialog):
         self.bilan_fields = {}
         for row_i, (key, label) in enumerate(bilan_fields_translated(), start=1):
             lbl = QLabel(label)
-            lbl.setStyleSheet("color:#a09070;font-size:9pt;font-weight:500;")
+            lbl.setStyleSheet("color:#c0b090;font-size:9pt;font-weight:500;")
             lbl.setMinimumWidth(150)
             inp_av = QLineEdit(); inp_av.setFixedHeight(28); inp_av.setPlaceholderText("—")
             inp_ap = QLineEdit(); inp_ap.setFixedHeight(28); inp_ap.setPlaceholderText("—")
@@ -192,7 +192,7 @@ class DocumentDialog(QDialog):
 
         row_obs = len(self.bilan_fields) + 1
         obs_lbl = QLabel(t("bilan.observations"))
-        obs_lbl.setStyleSheet("color:#a09070;font-size:9pt;")
+        obs_lbl.setStyleSheet("color:#c0b090;font-size:9pt;")
         self.bilan_obs = QTextEdit(); self.bilan_obs.setFixedHeight(55)
         self.bilan_obs.setPlaceholderText(t("bilan.obs_ph"))
         bilan_grid.addWidget(obs_lbl, row_obs, 0)
@@ -241,7 +241,7 @@ class DocumentDialog(QDialog):
         if big:
             val.setStyleSheet(f"color:#d4a853;font-size:13pt;font-weight:bold;font-family:'{mf}';")
         else:
-            val.setStyleSheet(f"color:#a09070;font-family:'{mf}';")
+            val.setStyleSheet(f"color:#c0b090;font-family:'{mf}';")
         row.addWidget(lbl); row.addStretch(); row.addWidget(val)
         parent_layout.addLayout(row)
         return val
@@ -339,7 +339,7 @@ class DocumentDialog(QDialog):
         except Exception:
             mf = "Courier New"
         total_lbl = QLabel("0,00 €"); total_lbl.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
-        total_lbl.setStyleSheet(f"color:#a09070;font-family:'{mf}';padding-right:6px;")
+        total_lbl.setStyleSheet(f"color:#c0b090;font-family:'{mf}';padding-right:6px;")
 
         btn_del = QPushButton("✕"); btn_del.setObjectName("btn-flat"); btn_del.setFixedSize(28, 26)
         btn_del.clicked.connect(lambda: (

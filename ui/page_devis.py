@@ -79,7 +79,7 @@ class DevisPage(BasePage):
         toolbar.addStretch()
 
         self.count_lbl = QLabel("0 devis")
-        self.count_lbl.setStyleSheet("color:#6a6050;font-size:9pt")
+        self.count_lbl.setStyleSheet("color:#908870;font-size:9pt")
         toolbar.addWidget(self.count_lbl)
         layout.addLayout(toolbar)
 

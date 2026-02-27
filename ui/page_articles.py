@@ -45,7 +45,7 @@ class ArticlesPage(BasePage):
         toolbar.addWidget(btn_tmpl)
 
         self.count_lbl = QLabel("0 articles")
-        self.count_lbl.setStyleSheet("color:#6a6050;font-size:9pt;margin-left:8px")
+        self.count_lbl.setStyleSheet("color:#908870;font-size:9pt;margin-left:8px")
         toolbar.addWidget(self.count_lbl)
         layout.addLayout(toolbar)
 

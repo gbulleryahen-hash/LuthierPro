@@ -47,7 +47,7 @@ class BilanPage(BasePage):
         filter_layout.setSpacing(14)
 
         lbl_period = QLabel("Période :")
-        lbl_period.setStyleSheet("color:#8a8070;font-size:9pt;")
+        lbl_period.setStyleSheet("color:#b0a888;font-size:9pt;")
         filter_layout.addWidget(lbl_period)
 
         self.period_cb = QComboBox()
@@ -61,7 +61,7 @@ class BilanPage(BasePage):
         filter_layout.addWidget(sep)
 
         lbl_from = QLabel("Du :")
-        lbl_from.setStyleSheet("color:#8a8070;font-size:9pt;")
+        lbl_from.setStyleSheet("color:#b0a888;font-size:9pt;")
         filter_layout.addWidget(lbl_from)
 
         self.date_from = QDateEdit()
@@ -71,7 +71,7 @@ class BilanPage(BasePage):
         filter_layout.addWidget(self.date_from)
 
         lbl_to = QLabel("Au :")
-        lbl_to.setStyleSheet("color:#8a8070;font-size:9pt;")
+        lbl_to.setStyleSheet("color:#b0a888;font-size:9pt;")
         filter_layout.addWidget(lbl_to)
 
         self.date_to = QDateEdit()
@@ -85,7 +85,7 @@ class BilanPage(BasePage):
         filter_layout.addWidget(sep2)
 
         lbl_statut = QLabel("Statuts :")
-        lbl_statut.setStyleSheet("color:#8a8070;font-size:9pt;")
+        lbl_statut.setStyleSheet("color:#b0a888;font-size:9pt;")
         filter_layout.addWidget(lbl_statut)
 
         self.chk_paye   = QCheckBox("Payé");     self.chk_paye.setChecked(True)
@@ -118,7 +118,7 @@ class BilanPage(BasePage):
 
         self.placeholder = QLabel("👆  Choisissez une période et cliquez sur Calculer")
         self.placeholder.setAlignment(Qt.AlignCenter)
-        self.placeholder.setStyleSheet("color:#4a4535;font-size:12pt;padding:60px;")
+        self.placeholder.setStyleSheet("color:#706858;font-size:12pt;padding:60px;")
         self.results_layout.addWidget(self.placeholder)
         self.results_layout.addStretch()
 
@@ -192,9 +192,9 @@ class BilanPage(BasePage):
         period_lbl.setTextFormat(Qt.RichText)
         period_lbl.setText(
             f'<span style="font-family:\'{sf}\',Georgia,serif;font-size:15pt;font-weight:bold;">'
-            f'<span style="color:#8a8070;">Résultats du </span>'
+            f'<span style="color:#b0a888;">Résultats du </span>'
             f'<span style="color:#d4a853;">{_fmt_date(d_from)}</span>'
-            f'<span style="color:#8a8070;"> au </span>'
+            f'<span style="color:#b0a888;"> au </span>'
             f'<span style="color:#d4a853;">{_fmt_date(d_to)}</span>'
             f'</span>'
         )
@@ -203,7 +203,7 @@ class BilanPage(BasePage):
         if result["nb_factures"] == 0:
             empty = QLabel("Aucune facture trouvée pour cette période.")
             empty.setAlignment(Qt.AlignCenter)
-            empty.setStyleSheet("color:#4a4535;font-size:11pt;padding:40px;")
+            empty.setStyleSheet("color:#706858;font-size:11pt;padding:40px;")
             self.results_layout.addWidget(empty)
             self.results_layout.addStretch()
             return
@@ -215,7 +215,7 @@ class BilanPage(BasePage):
             vl = QVBoxLayout(card)
             vl.setContentsMargins(18, 12, 18, 12); vl.setSpacing(4)
             t = QLabel(title)
-            t.setStyleSheet("color:#6a6050;font-size:8pt;letter-spacing:1px;text-transform:uppercase;")
+            t.setStyleSheet("color:#908870;font-size:8pt;letter-spacing:1px;text-transform:uppercase;")
             v = QLabel(value)
             v.setFont(QFont(mf, 16, QFont.Bold))
             v.setStyleSheet(f"color:{color};")
@@ -273,7 +273,7 @@ class BilanPage(BasePage):
 
             pct_lbl = QLabel(f"{pct*100:.1f}%")
             pct_lbl.setFixedWidth(48)
-            pct_lbl.setStyleSheet("color:#5a5040;font-size:9pt;")
+            pct_lbl.setStyleSheet("color:#8a7c60;font-size:9pt;")
             pct_lbl.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
 
             row_h.addWidget(lbl_n)
@@ -288,7 +288,7 @@ class BilanPage(BasePage):
         vl.addWidget(sep_line)
         tot_row = QHBoxLayout()
         lbl_tot = QLabel("TOTAL HT")
-        lbl_tot.setStyleSheet("color:#8a8070;font-size:9pt;font-weight:bold;letter-spacing:1px;")
+        lbl_tot.setStyleSheet("color:#b0a888;font-size:9pt;font-weight:bold;letter-spacing:1px;")
         lbl_ht = QLabel(_fmt(result["total_ht"]))
         lbl_ht.setFont(QFont(mf, 12, QFont.Bold))
         lbl_ht.setStyleSheet("color:#d4a853;")
@@ -306,7 +306,7 @@ class BilanPage(BasePage):
 
         tva_title = QLabel("📋  RÉCAPITULATIF DÉCLARATION")
         tva_title.setStyleSheet(
-            "color:#8a8070;font-size:8pt;font-weight:bold;letter-spacing:2px;"
+            "color:#b0a888;font-size:8pt;font-weight:bold;letter-spacing:2px;"
         )
         tl.addWidget(tva_title)
 
@@ -330,7 +330,7 @@ class BilanPage(BasePage):
                 decl_grid.addWidget(sep, i*2, 0, 1, 3)
 
             lbl_d = QLabel(label)
-            lbl_d.setStyleSheet(f"color:#8a8070;font-size:9pt;")
+            lbl_d.setStyleSheet(f"color:#b0a888;font-size:9pt;")
             val_lbl = QLabel(_fmt(val))
             val_lbl.setFont(QFont(mf, 10))
             val_lbl.setStyleSheet(f"color:{color};")
@@ -344,7 +344,7 @@ class BilanPage(BasePage):
             f"💡 Période : {result['nb_factures']} facture{'s' if result['nb_factures']>1 else ''} "
             f"— Retournez l'excédent de TVA collectée sur votre déclaration CA12/CA3."
         )
-        hint.setStyleSheet("color:#4a4535;font-size:8pt;font-style:italic;")
+        hint.setStyleSheet("color:#706858;font-size:8pt;font-style:italic;")
         hint.setWordWrap(True)
         tl.addWidget(hint)
 
@@ -357,13 +357,13 @@ class BilanPage(BasePage):
             cl.setContentsMargins(20, 14, 20, 14); cl.setSpacing(8)
             cl_title = QLabel("TOP CLIENTS")
             cl_title.setStyleSheet(
-                "color:#6a6050;font-size:8pt;font-weight:bold;letter-spacing:2px;"
+                "color:#908870;font-size:8pt;font-weight:bold;letter-spacing:2px;"
             )
             cl.addWidget(cl_title)
             for i, (client, total) in enumerate(result["par_client"][:5]):
                 row_h = QHBoxLayout()
                 rank  = QLabel(f"#{i+1}")
-                rank.setStyleSheet("color:#4a4535;font-size:9pt;min-width:28px;")
+                rank.setStyleSheet("color:#706858;font-size:9pt;min-width:28px;")
                 cname = QLabel(client)
                 cname.setStyleSheet("color:#c8c0b0;font-size:10pt;")
                 cval  = QLabel(_fmt(total))
@@ -377,7 +377,7 @@ class BilanPage(BasePage):
         # ── Détail des factures ───────────────────────────────
         detail_lbl = QLabel("DÉTAIL DES FACTURES")
         detail_lbl.setStyleSheet(
-            "color:#6a6050;font-size:8pt;font-weight:bold;letter-spacing:2px;margin-top:4px;"
+            "color:#908870;font-size:8pt;font-weight:bold;letter-spacing:2px;margin-top:4px;"
         )
         self.results_layout.addWidget(detail_lbl)
 
@@ -395,7 +395,7 @@ class BilanPage(BasePage):
             "payé":      "#6bbf8e",
             "envoyé":    "#6090d4",
             "en retard": "#d46060",
-            "brouillon": "#6a6050",
+            "brouillon": "#908870",
             "annulé":    "#4a4035",
         }
 
@@ -415,7 +415,7 @@ class BilanPage(BasePage):
             statut = f.get("statut","")
             icon = {"payé":"✅","envoyé":"🔵","en retard":"🔴","annulé":"⛔"}.get(statut,"⬜")
             si = QTableWidgetItem(f"{icon} {statut.capitalize()}")
-            si.setForeground(QColor(STATUS_COLORS.get(statut, "#8a8070")))
+            si.setForeground(QColor(STATUS_COLORS.get(statut, "#b0a888")))
             tbl.setItem(ri, 6, si)
 
         tbl.setFixedHeight(min(44 + len(result["factures"]) * 34, 420))
